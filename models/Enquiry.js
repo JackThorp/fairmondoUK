@@ -50,10 +50,10 @@ Enquiry.schema.methods.sendNotificationEmail = function(callback) {
 		new keystone.Email('enquiry-notification').send({
 			to: admins,
 			from: {
-				name: 'fairmondoUK',
-				email: 'contact@fairmondouk.com'
+				name: 'Fairmondo',
+				email: 'contact@fairmondo.com'
 			},
-			subject: 'New Enquiry for fairmondoUK',
+			subject: 'New Enquiry for Fairmondo',
 			enquiry: enquiry
 		}, callback);
 		

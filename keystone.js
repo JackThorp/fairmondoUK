@@ -11,10 +11,10 @@ var keystone = require('keystone');
 
 keystone.init({
 
-	'name': 'fairmondoUK',
-	'brand': 'fairmondoUK',
+	'name': 'Fairmondo',
+	'brand': 'Fairmondo',
 	
-	'sass': 'public',
+	'less': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
@@ -88,6 +88,7 @@ keystone.set('email tests', require('./routes/emails'));
 // Configure the navigation bar in Keystone's Admin UI
 
 keystone.set('nav', {
+	'posts': ['posts', 'post-categories'],
 	'enquiries': 'enquiries',
 	'users': 'users'
 });

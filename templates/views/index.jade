@@ -1,23 +1,30 @@
 extends ../layouts/default
 
 block content
-	.container: .jumbotron
-		img(src='/images/logo.svg', width='160')
-		h1 Welcome
-		p This is your new <a href='http://keystonejs.com', target='_blank'>KeystoneJS</a> website.
-		p It includes the latest versions of
-			| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
-		hr
-		if user && user.canAccessKeystone
-			p
-				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
-		else
-			p We have created a default Admin user for you with the email <strong>jackthorp13@gmail.com</strong> and the password <strong>admin</strong>.
-			p
-				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-				|  to use the Admin UI.
-		hr
-		p Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			| <a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
+
+  .container-fluid
+    .row
+      .col-xs-8.col-xs-offset-2(style="padding-bottom:100px;")
+        img(src='/images/FairmondoUKGreen.svg') 
+        h2(style='text-align:center;') Eveything Ethical
+        h2(style='text-align:center;') Ethical Everywhere
+    .row(style="background-color:#6d9eeb")
+      .col-xs-10.col-xs-offset-1
+        .row
+          .col-sm-4.col-xs-12
+            img(src='images/circle.png' width='200px')
+            h3 We The Workers
+            p fairmondo is a marketplace, owned by its workers and the producers/consumers who trade through it.
+          .col-sm-4.col-xs-12
+            img(src='images/square.png' width='200px')
+            h3 Do No Harm
+            p production, distribution and exchange without harm to people, animals or planet
+          .col-sm-4.col-xs-12
+            img(src='images/triangle.png' width='200px')
+            h3 Be Sustainable
+            p production, distribution and exchange in harmony with eco-system resources.
+            
+
+
+
+
