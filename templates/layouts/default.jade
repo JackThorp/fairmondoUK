@@ -3,108 +3,140 @@ include ../mixins/flash-messages
 doctype html
 html
 
-	//- HTML HEADER
-	head
-		meta(charset="utf-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+  //- HTML HEADER
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
-		title= title || 'Fairmondo'
-		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+    title= title || 'Fairmondo'
+    link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
-		//- Customise the stylesheet for your site by editing /public/styles/site.less
-		//- All .less files will be automatically compiled and minified in production.
-		link(href="/styles/site.min.css", rel="stylesheet")
+    //- Customise the stylesheet for your site by editing /public/styles/site.less
+    //- All .less files will be automatically compiled and minified in production.
+    link(href="/styles/site.min.css", rel="stylesheet")
+    link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+    //- This file provides the default styling for the KeystoneJS Content Editor
+    if user && user.canAccessKeystone
+      link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
 
-		//- This file provides the default styling for the KeystoneJS Content Editor
-		if user && user.canAccessKeystone
-			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
+    //- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    //- Safely remove this block if you are not targeting IE8
+    //-[if lt IE 9]
+      script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+      script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
+    //-[endif]
 
-		//- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		//- Safely remove this block if you are not targeting IE8
-		//-[if lt IE 9]
-			script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
-			script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
-		//-[endif]
+    //- Include template-specific stylesheets by extending the css block
+    block css
 
-		//- Include template-specific stylesheets by extending the css block
-		block css
+    //- Add any other template-specific HEAD tags by extending the head block
+    block head
 
-		//- Add any other template-specific HEAD tags by extending the head block
-		block head
+    //- HTML BODY
+    body
 
-	//- HTML BODY
-	body
+      //- HEADER
+      #header: .container
 
-		//- HEADER
-		#header: .container
+        //- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
+        //- ... or completely change this header to suit your design.
 
-			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
-			//- ... or completely change this header to suit your design.
+        .navbar-default(role="navigation" style="background-color: #ffffff")
+          .container-fluid
+            .navbar-header
+              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              a.navbar-brand(href='/')
+                img(style='height:50px; margin-top: -15px' src='/images/FairmondoUKGreen.svg')
+            .collapse.navbar-collapse
+              ul.nav.navbar-nav.navbar-left
+                each link in navLinks
+                  li(class=(section == link.key ? 'active' : null)): a(href=link.href style="font-size: 1.2em;")= link.label
+              ul.nav.navbar-nav.navbar-right
+                if user
+                  if user.canAccessKeystone
+                    li: a(href='/keystone') Open Keystone
+                  li: a(href='/keystone/signout') Sign Out
+                else
+                  li: a(href='/keystone/signin') Sign In
 
-			.navbar-default(role="navigation" style="background-color: #ffffff")
-				.container-fluid
-					.navbar-header
-						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-							span.sr-only Toggle navigation
-							span.icon-bar
-							span.icon-bar
-							span.icon-bar
-						a.navbar-brand(href='/') Fairmondo
-					.collapse.navbar-collapse
-						ul.nav.navbar-nav.navbar-left
-							each link in navLinks
-								li(class=(section == link.key ? 'active' : null)): a(href=link.href style="font-size: 1.2em;")= link.label
-						ul.nav.navbar-nav.navbar-right
-							if user
-								if user.canAccessKeystone
-									li: a(href='/keystone') Open Keystone
-								li: a(href='/keystone/signout') Sign Out
-							else
-								li: a(href='/keystone/signin') Sign In
+      //- BODY
+      #body
 
-		//- BODY
-		#body
+        //- NOTE:
+        //- There is no .container wrapping class around body blocks to allow more flexibility in design.
+        //- Remember to include it in your templates when you override the intro and content blocks!
 
-			//- NOTE:
-			//- There is no .container wrapping class around body blocks to allow more flexibility in design.
-			//- Remember to include it in your templates when you override the intro and content blocks!
+        //- The Intro block appears above flash messages (used for temporary information display)
+        block intro
 
-			//- The Intro block appears above flash messages (used for temporary information display)
-			block intro
+        //- Flash messages allow you to display once-off status messages to users, e.g. form
+        //- validation errors, success messages, etc.
+        +flash-messages(messages)
 
-			//- Flash messages allow you to display once-off status messages to users, e.g. form
-			//- validation errors, success messages, etc.
-			+flash-messages(messages)
-
-			//- The content block should contain the body of your template's content
-			block content
-
-
-		//- FOOTER
-		.container: #footer
-
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+        //- The content block should contain the body of your template's content
+        block content
 
 
-		//- JAVASCRIPT
+      //- FOOTER
+      .container(style='margin-top: 30px;padding-top:30px')
+        .row
+          .col-xs-12(style="text-align: center;")
+            a(href="/about" style="padding: 10px") About
+            = ' | '
+            a(href="/blog" style="padding: 10px") Blog
+            = ' | '
+            a(href="/sign-up" style="padding: 10px") Newsletter
+        .row(style="margin:10px")
+          .col-xs-12.col-sm-4(style="text-align:center;")
+            a(href="http://www.uk.coop/" target="_blank")
+              img(src="/images/coops_uk.png" style="height: 50px;" alt="cooperatives UK")
 
-		//- jQuery 1.11.1 is included by default, and required by both Bootstrap
-		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-		//- you can upgrade to 2.1.3 (also bundled) for better performance.
-		script(src='/js/jquery/jquery-1.11.2.min.js')
+          .col-xs-12.col-sm-4(style="text-align:center")
+            ul.social(style="display:inline; list-style-type: none; padding-left: 0;margin: 5px auto 5px auto; line-height: 100% !important")
+              li(style="display:inline;padding: 10px 10px")
+                a(href="https://www.facebook.com/fairmarketcoop" target="_blank")
+                  i.fa.fa-facebook(style="font-size: 24px !important;width: 24px !important; height: 24px !important; line-height: 24px !important;")
+              li(style="display:inline;padding: 10px 10px")
+                a(href="https://twitter.com/fairmarketcoop" target="_blank")
+                  i.fa.fa-twitter(style="font-size: 24px !important;width: 24px !important; height: 24px !important; line-height: 24px !important;")
+              li(style="display:inline;padding: 10px 10px")
+                a(href="https://www.pinterest.com/theoldmaninrome/fairmarketcoop/" target="_blank")
+                  i.fa.fa-pinterest(style="font-size: 24px !important;width: 24px !important; height: 24px !important; line-height: 24px !important;")
 
-		//- Customise which Bootstrap javascript files are served by including
-		//- them specifically here, instead of bootstrap-3.3.4.min.js
-		script(src='/js/bootstrap/bootstrap-3.3.4.min.js')
+          .col-xs-12.col-sm-4(style='text-align:center;')
+            a(href="http://www.ica.coop" target-"_blank")
+              img(src="/images/Coop_marque/png/coop_emgr.png" style="height: 50px;" alt="International Cooperative Alliance")
 
-		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
-		//- which generate links to edit content for users who can access Keystone
-		if user && user.canAccessKeystone
-			script(src='/keystone/js/content/editor.js')
 
-		//- Add scripts that are globally required by your site here.
+        .row
+          .col-xs-12(style="text-align:center;")
+            address Central Hall, Alice Street, Keighley, UK, BD21 3JD
+            //- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
+            p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
 
-		//- Include template-specific javascript files by extending the js block
-		block js
+
+      //- JAVASCRIPT
+
+      //- jQuery 1.11.1 is included by default, and required by both Bootstrap
+      //- and the KeystoneJS Content Editor. If you are not targeting IE8,
+      //- you can upgrade to 2.1.3 (also bundled) for better performance.
+      script(src='/js/jquery/jquery-1.11.2.min.js')
+
+      //- Customise which Bootstrap javascript files are served by including
+      //- them specifically here, instead of bootstrap-3.3.4.min.js
+      script(src='/js/bootstrap/bootstrap-3.3.4.min.js')
+
+      //- The KeystoneJS Content Editor provides support for ks-editable data attributes,
+      //- which generate links to edit content for users who can access Keystone
+      if user && user.canAccessKeystone
+        script(src='/keystone/js/content/editor.js')
+
+      //- Add scripts that are globally required by your site here.
+
+      //- Include template-specific javascript files by extending the js block
+      block js
