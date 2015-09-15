@@ -4,44 +4,66 @@ block content
 
   .cotainer-fluid
     .row
+      .col-xs-10.col-xs-offset-1
+        h1(style="text-align:center; margin: 50px;")= data.sections[0].sectionTitle 
+        img.centered-img(src="images/fairmondo-.svg" style="margin: 0 auto;" height="300px")
+    
+    .row(style='margin: 50px 0; padding: 50px 0; background-color: #6aa84f')
+      .col-xs-10.col-xs-offset-1(style='text-align:center; color: white')
+        div(style='font-size:1.5em')
+          != data.sections[0].content.html
+
+    .row(style='margin: 50px 0; padding: 100px 0;')
       .col-xs-8.col-xs-offset-2
-        img.centered-img(src="images/ethicalbaymeetup3.jpg" style="margin: 50px auto" height="300px")
+        h1 DIAGRAM OF SOME ETHICAL TRADE CYCLE  
+
+    .row(style='margin: 50px 0; padding: 50px 0; background-color: #ffd966')
+      .col-xs-10.col-xs-offset-1(style='text-align:center;')
+        h1= data.sections[1].sectionTitle
+        div(style='font-size:1.5em; text-align: left;list-style-type: none')
+          != data.sections[1].content.html
     .row
-      .col-xs-8.col-xs-offset-2
-        h1 What is fairmondo UK?
-        p.
-          Fair Mondo began life in Germany in 2012 as a cooperatively owned marketplace
-          that would promote fair goods and services and “responsible consumption”.
-          It is owned and run democratically by its members. 
-          Fairmondo UK is a next step in building a global network of cooperative platforms for
-          trading goods and services.  The UK platform is being built and promoted by Worth
-          Cooperating until its launch as a multi-stakeholder cooperative based on a Somerset and Fairshares rules.
-
-    .row
-      .col-xs-8.col-xs-offset-2
-        h1 Our Aims: 
-        ul
-          li To make it easy and affordable to “buy the good” - ethical goods and services.
-          li To bring ethically committed sellers and customers together in one trusted, transparent marketplace.
-          li To provide a wide and growing range of ethical goods and services.
-          li The sellers, customers, workers, founders and investors cooperatively finance, own and control the business. 
-          li To use a share of any surplus for social good.
-          li To anchor the enterprise in West Yorkshire.
-
-   .row
-     .col-xs-8.col-xs-offset-2
-       h1 Road Map
-       p.
-         Through 2015 and 2016 during the initiation and discovery phases we will be:
-       p.
-         Signing up potential members, sellers, customers, workers, investors.
-         Concept testing.
-       p.
-         Assembling finance to build and launch the first trading site (crowdfunding, social share issue).
-         Drafting the organisation structure and rules.
-       p.
-         Many hands make light the work - how much we get done and how fast hinges on people getting involved - that’s the cooperative way!
-       p.
-         Worth Cooperating is a workers coop formed to build and launch cooperative platforms - online enterprises where the effort, risks and the rewards are fairly shared by users: sellers, customers, workers, founders, investors.  We welcome new members to this cooperative with the time, talent and enthusiasm to build the future of the cooperative movement.
-
-
+      .col-xs-10.col-xs-offset-1
+        img.centered-img(src="images/ethicalbaymeetup3.jpg" style="margin: 50px auto 0 auto" height="300px")
+        p This is us - don't we look great. 
+    
+    .row(style='margin: 50px 0; padding: 50px 0; background-color: #e06666; text-align:center')
+     .col-xs-10.col-xs-offset-1(style='text-align:center; margin-bottom:40px')
+       h1 Who's Already In?
+       h4 a.k.a meet the team
+     .col-md-3.col-sm-4.col-xs-6
+       img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
+       h4 Henry Cummings
+       h5 social media marketing
+     .col-md-3.col-sm-4.col-xs-6
+       img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
+       h4 Richard Dillon
+       h5 project development
+     .col-md-3.col-sm-4.col-xs-6
+       img.centered-img(style='border-radius: 20px;' src='images/linda.jpg' height='200px')
+       h4 Linda Gomila
+       h5 member relations
+     .col-md-3.col-sm-4.col-xs-6
+       img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
+       h4 Marie-Claire Kidd
+       h5 public relations
+     .col-md-3.col-sm-4.col-xs-6
+       img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
+       h4 Graham Mitchell
+       h5 technical development
+     .col-md-3.col-sm-4.col-xs-6
+       img.centered-img(style='border-radius: 20px;' src='images/shaun.jpg' height='200px')
+       h4 Shaun O’Hare
+       h5 funding
+     .col-md-3.col-sm-4.col-xs-6
+       img.centered-img(style='border-radius: 20px;' src='images/bob.jpg' height='200px')
+       h4 Bob Thorp
+       h5 project development
+     .col-md-3.col-sm-4.col-xs-6
+       img.centered-img(style='border-radius: 20px;' src='images/jack.jpg' height='200px')
+       h4 Jack Thorp
+       h5 technical development
+     .col-md-3.col-sm-4.col-xs-6
+       img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
+       h4 Felix Weth
+       h5 business development
