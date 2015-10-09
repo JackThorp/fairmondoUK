@@ -1,55 +1,86 @@
 extends ../layouts/default
 
+block js
+  script(src='js/index.js')
+  //script(type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js')
+
 block content
 
   .container-fluid
     .row
-      .col-xs-8.col-xs-offset-2(style="padding-bottom:100px;")
-        img(src='/images/FairmondoUKGreen.svg') 
-        h2(style='text-align:center;') The Ethical Marketplace 
+      .col-xs-10.col-xs-offset-1(style="padding-bottom:50px;")
+        img.centered-img(src='/images/FairmondoUKGreen.svg' style="max-width: 80%") 
+        h1 - Buy The Good -
+        h2 A cooperatively owned online marketplace that makes it really easy to source ethical goods and services from sellers with a strong commitment to ethical business and trade. 
+
+    hr
     
-    .row(style="background-color:#6d9eeb;padding: 50px 0")
+    .row
       .col-xs-10.col-xs-offset-1
-        .row
+        h1 What is FairmondoUK?
+        .row(style="padding-top: 40px;")
           .col-sm-4.col-xs-12
-            img.centered-img(src='images/together.svg' width='200px')
+            img.centered-img(src='images/Ubiquitous.svg' width='150px' height='150px')
+            h2(style='text-align:center;') The One
+            p(style='text-align:center;padding: 0 10%;') A marketplace that brings ethical sellers goods and customers together in one place.
           .col-sm-4.col-xs-12
-            img.centered-img(src='images/doNoHarm.svg' width='300px')
+            img.centered-img(src='images/Easy.svg' width='150px' height='150px')
+            h2(style='text-align:center;') Easy 
+            p(style='text-align:center;padding: 0 10%;') A marketplace that makes it really easy to find ethical solutions to everyday needs.
           .col-sm-4.col-xs-12
-            img.centered-img(src='images/heartsOnSleeves.svg' width='200px')
-        .row
-          .col-sm-4.col-xs-12
-            h2(style='text-align:center;') Together 
-            p(style='text-align:justify;font-size:1.3em;') Ethical Sellers, Goods and Customers all in one cooperatively owned and run marketplace, sharing the effort and sharing the rewards fairly. 
-          .col-sm-4.col-xs-12
-            h2(style='text-align:center;') Do No Harm 
-            p(style='text-align:justify;font-size:1.3em;') The organisation, processes and systems we use to provision our needs and create wealth and happiness should “do no harm” to people, other living creatures or the planet. This will be our hardest journey. 
-          .col-sm-4.col-xs-12
-            h2(style='text-align:center;') Hearts On Sleeves
-            p(style='text-align:justify;font-size:1.3em;') Sellers self-declare the ethical values that drive their business, goods and services. 
-
-
-
-    .row(style='padding: 200px 0')
-      
-
-    .row(style="background-color:#e06666;padding: 50px 0")
-      .col-xs-10.col-xs-offset-1
-        .row
-          .col-sm-4.col-xs-12
-            img(src='images/circle.png' style='margin:0 auto; display:block;' width='200px')
-            h2(style='text-align:center;') We The Workers
-            p(style='text-align:center;font-size:1.5em;') fairmondo is a marketplace, owned by its workers and the producers/consumers who trade through it.
-          .col-sm-4.col-xs-12
-            img(src='images/square.png' style='margin:0 auto; display:block;' width='200px')
-            h2(style='text-align:center;') Do No Harm
-            p(style='text-align:center;font-size:1.5em;') production, distribution and exchange without harm to people, animals or planet
-          .col-sm-4.col-xs-12
-            img(src='images/triangle.png' style='margin:0 auto; display:block;' width='200px')
-            h2(style='text-align:center;') Be Sustainable
-            p(style='text-align:center;font-size:1.5em;') production, distribution and exchange in harmony with eco-system resources.
+            img.centered-img(src='images/together.svg' width='150px' height='150px')
+            h2(style='text-align:center;') Cooperative
+            p(style='text-align:center;padding: 0 10%;') A marketplace that is cooperatively owned and run by its users: buyers, sellers, workers, investors.
             
+    hr
 
+    .row
+      .col-xs-10.col-xs-offset-1
+        form.form-horizontal(action="/subscribe" method="post")
+          h1 - Be The Good -
+          h3 Subscribe to our mailing list and get involoved
+          .col-sm-8.col-sm-offset-2
 
+            #mce-responses.clear
+              .alert.alert-danger(id="mce-error-response" style="display:none") 
+              .alert.alert-success(id="mce-success-response" style="display:none")
 
+            .form-group
+              input.form-control(type="email" placeholder="Email" value="" name="EMAIL" id="mce-EMAIL")
+
+            .form-group
+              .col-xs-6.col-sm-3
+                label.checkbox-inline(for="mce-group[17881]-17881-0")
+                  input(type="checkbox" value="1" name="interests[84eb0fb602]" id="mce-group[17881]-17881-0")
+                  | Buyer
+              .col-xs-6.col-sm-3
+                label.checkbox-inline(for="mce-group[17881]-17881-1")
+                  input(type="checkbox" value="1" name="interests[11c76ad6f6]" id="mce-group[17881]-17881-1")
+                  | Seller
+
+              .col-xs-6.col-sm-3
+                label.checkbox-inline(for="mce-group[17881]-17881-2")
+                  input(type="checkbox" value="1" name="interests[59b807ebca]" id="mce-group[17881]-17881-2")
+                  | Partner
+              
+              .col-xs-6.col-sm-3
+                label.checkbox-inline(for="mce-group[17881]-17881-3")
+                  input(type="checkbox"  value="1" name="interests[b118819943]" id="mce-group[17881]-17881-3")
+                  | Supporter
+            .form-group.clear.text-center
+              button.btn.btn-default(type="submit") Subscribe
+    hr
+    
+    .row
+      .col-xs-12.col-sm-6.col-sm-offset-3
+        h1 Where do we go from here?
+        p.text-center Find out about the plan for the future and how you can get involved by looking at our roadmap or checking out our vacancies list.
+        .text-center
+          button.btn.btn-default() See The Roadmap
+          button.btn.btn-default() Check Our Vacancies
+
+    hr
+
+script(type='text/javascript'). 
+  (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
 

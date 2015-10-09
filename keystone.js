@@ -27,11 +27,7 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 
-  'cloudinary config': {
-    'cloud_name': 'didub4plo',
-    'api_secret': '329461565774814',
-    'api_key': 'arJ3CxU_zHveWofO5fAaPqGbKQI'
-  }
+  'cloudinary config': 'cloudinary://329461565774814:arJ3CxU_zHveWofO5fAaPqGbKQI@didub4plo'
 
 });
 

@@ -1,69 +1,72 @@
 extends ../layouts/default
 
+block intro
+  h1(style="text-align:center;")= data["what_is_fairmondo"].sectionTitle 
+
 block content
 
-  .cotainer-fluid
+  .container-fluid
     .row
       .col-xs-10.col-xs-offset-1
-        h1(style="text-align:center; margin: 50px;")= data.sections[0].sectionTitle 
-        img.centered-img(src="images/fairmondo-.svg" style="margin: 0 auto;" height="300px")
-    
-    .row(style='margin: 50px 0; padding: 50px 0; background-color: #6aa84f')
+        img.centered-img(src="images/fairmondo-.svg" style="margin: 20px auto; max-height:300px")
+
+    .row(style='padding-top: 50px; padding-bottom: 50px ;background-color: #6aa84f')
       .col-xs-10.col-xs-offset-1(style='text-align:center; color: white')
         div(style='font-size:1.5em')
-          != data.sections[0].content.html
+          != data['what_is_fairmondo'].content.html
 
-    .row(style='margin: 50px 0; padding: 100px 0;')
-      .col-xs-8.col-xs-offset-2
-        h1 DIAGRAM OF SOME ETHICAL TRADE CYCLE  
-
-    .row(style='margin: 50px 0; padding: 50px 0; background-color: #ffd966')
-      .col-xs-10.col-xs-offset-1(style='text-align:center;')
-        h1= data.sections[1].sectionTitle
-        div(style='font-size:1.5em; text-align: left;list-style-type: none')
-          != data.sections[1].content.html
     .row
+      .col-xs-12
+        h1.text-center Roadmap
+        img.centered-img(src!= data['roadmap'].image.url style="max-width:100%")
+
+    .row(style='background-color: #ffd966')
+      .col-xs-10.col-xs-offset-1(style='text-align:center;')
+        h1= data['aims'].sectionTitle
+        div(style='font-size:1.5em; text-align: left;list-style-type: none')
+          != data['aims'].content.html
+    //.row
       .col-xs-10.col-xs-offset-1
         img.centered-img(src="images/ethicalbaymeetup3.jpg" style="margin: 50px auto 0 auto" height="300px")
         p This is us - don't we look great. 
     
-    .row(style='margin: 50px 0; padding: 50px 0; background-color: #e06666; text-align:center')
-     .col-xs-10.col-xs-offset-1(style='text-align:center; margin-bottom:40px')
-       h1 Who's Already In?
-       h4 a.k.a meet the team
-     .col-md-3.col-sm-4.col-xs-6
-       img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
-       h4 Henry Cummings
-       h5 social media marketing
-     .col-md-3.col-sm-4.col-xs-6
-       img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
-       h4 Richard Dillon
-       h5 project development
-     .col-md-3.col-sm-4.col-xs-6
-       img.centered-img(style='border-radius: 20px;' src='images/linda.jpg' height='200px')
-       h4 Linda Gomila
-       h5 member relations
-     .col-md-3.col-sm-4.col-xs-6
-       img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
-       h4 Marie-Claire Kidd
-       h5 public relations
-     .col-md-3.col-sm-4.col-xs-6
-       img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
-       h4 Graham Mitchell
-       h5 technical development
-     .col-md-3.col-sm-4.col-xs-6
-       img.centered-img(style='border-radius: 20px;' src='images/shaun.jpg' height='200px')
-       h4 Shaun O’Hare
-       h5 funding
-     .col-md-3.col-sm-4.col-xs-6
-       img.centered-img(style='border-radius: 20px;' src='images/bob.jpg' height='200px')
-       h4 Bob Thorp
-       h5 project development
-     .col-md-3.col-sm-4.col-xs-6
-       img.centered-img(style='border-radius: 20px;' src='images/jack.jpg' height='200px')
-       h4 Jack Thorp
-       h5 technical development
-     .col-md-3.col-sm-4.col-xs-6
-       img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
-       h4 Felix Weth
-       h5 business development
+    //.row(style='margin: 50px 0; padding: 50px 0; text-align:center')
+       .col-xs-10.col-xs-offset-1(style='text-align:center; margin-bottom:40px')
+         h1 Who's Already In?
+         h4 a.k.a meet the team
+       .col-md-3.col-sm-4.col-xs-6
+         img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
+         h4 Henry Cummings
+         h5 social media marketing
+       .col-md-3.col-sm-4.col-xs-6
+         img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
+         h4 Richard Dillon
+         h5 project development
+       .col-md-3.col-sm-4.col-xs-6
+         img.centered-img(style='border-radius: 20px;' src='images/linda.jpg' height='200px')
+         h4 Linda Gomila
+         h5 member relations
+       .col-md-3.col-sm-4.col-xs-6
+         img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
+         h4 Marie-Claire Kidd
+         h5 public relations
+       .col-md-3.col-sm-4.col-xs-6
+         img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
+         h4 Graham Mitchell
+         h5 technical development
+       .col-md-3.col-sm-4.col-xs-6
+         img.centered-img(style='border-radius: 20px;' src='images/shaun.jpg' height='200px')
+         h4 Shaun O’Hare
+         h5 funding
+       .col-md-3.col-sm-4.col-xs-6
+         img.centered-img(style='border-radius: 20px;' src='images/bob.jpg' height='200px')
+         h4 Bob Thorp
+         h5 project development
+       .col-md-3.col-sm-4.col-xs-6
+         img.centered-img(style='border-radius: 20px;' src='images/jack.jpg' height='200px')
+         h4 Jack Thorp
+         h5 technical development
+       .col-md-3.col-sm-4.col-xs-6
+         img.centered-img(style='border-radius: 20px;' src='images/richard.jpg' height='200px')
+         h4 Felix Weth
+         h5 business development
