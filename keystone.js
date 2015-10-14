@@ -29,7 +29,7 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 
-  	'cloudinary config': 'cloudinary://329461565774814:arJ3CxU_zHveWofO5fAaPqGbKQI@didub4plo',
+  'cloudinary config': 'cloudinary://329461565774814:arJ3CxU_zHveWofO5fAaPqGbKQI@didub4plo',
 
 	'cookie secret': 'ADRWEFEV'
 
