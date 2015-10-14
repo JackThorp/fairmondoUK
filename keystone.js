@@ -19,6 +19,8 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
+
+	'port': 80,
 	
 	'emails': 'templates/emails',
 	
