@@ -30,17 +30,17 @@ h3 {
 
 p {
   font-family: @font-secondry;
-  font-size: 1em;
+  font-size: 1.em;
 }
 
-ul {
+.offer-list ul {
   list-style-type: square;
   padding: 0 10%;
   margin: 0px;
   font-family: @font-secondry;
 }
 
-ul li {
+.offer-list ul li {
   padding-bottom: 5px;
 }
 
@@ -49,10 +49,19 @@ ul li {
   margin-bottom: 5%;
 }
 
+.about-img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
 @media (min-width: @screen-sm-min ) {
   
   h2 {
     font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1.05em;
   }
 
 }
@@ -65,6 +74,10 @@ ul li {
 
   h2 {
     font-size: 1.8em;
+  }
+
+  p {
+    font-size: 1.1em;
   }
 
 }
@@ -87,4 +100,9 @@ ul li {
 
 ul.nav {
   padding-right: 0;
+}
+
+.summary-item p {
+  text-align: center;
+  //padding: 0 10%;
 }

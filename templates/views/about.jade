@@ -15,6 +15,37 @@ block content
         div(style='font-size:1.5em')
           != data['what_is_fairmondo'].content.html
 
+    hr 
+
+    .row#the_one
+      .col-xs-12.col-sm-10.col-sm-offset-1
+        .row
+          .col-sm-4
+            img.about-img.centered-img(src=data['the_one'].image.url)
+          .col-sm-8
+            h1 The One
+            .text-center
+              != data['the_one'].content.html
+    hr
+
+    .row#easy
+      .col-sm-4.col-sm-push-8
+        img.about-img.centered-img(src=data['easy'].image.url)
+      .col-sm-8.col-sm-pull-4
+        h1 Easy
+        .text-center(style="padding: 0 10%")
+          != data['easy'].content.html
+    hr
+
+    .row#cooperative
+      .col-sm-4
+        img.about-img.centered-img(src=data['cooperative'].image.url)
+      .col-sm-8
+        h1 Cooperative 
+        .text-center(style="padding: 0 10%")
+          != data['cooperative'].content.html
+    hr
+
     .row
       .col-xs-12
         h1.text-center Roadmap
@@ -25,10 +56,6 @@ block content
         h1= data['aims'].sectionTitle
         div(style='font-size:1.5em; text-align: left;list-style-type: none')
           != data['aims'].content.html
-    //.row
-      .col-xs-10.col-xs-offset-1
-        img.centered-img(src="images/ethicalbaymeetup3.jpg" style="margin: 50px auto 0 auto" height="300px")
-        p This is us - don't we look great. 
     
     //.row(style='margin: 50px 0; padding: 50px 0; text-align:center')
        .col-xs-10.col-xs-offset-1(style='text-align:center; margin-bottom:40px')
