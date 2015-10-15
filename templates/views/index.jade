@@ -19,17 +19,20 @@ block content
         h1 What is FairmondoUK?
         .row
           .col-sm-4.col-xs-12
-            img.framed-img.centered-img(src='images/ubiquitous.svg' width='150px' height='150px')
-            h2(style='text-align:center;') The One
-            p(style='text-align:center;padding: 0 10%;') A marketplace that brings ethical sellers goods and customers together in one place.
+            img.framed-img.centered-img(src=data['the_one'].image.url width='150px' height='150px')
+            h2.text-center The One
+            .summary-item
+              != data['the_one'].content.html
           .col-sm-4.col-xs-12
-            img.framed-img.centered-img(src='images/Easy.svg' width='150px' height='150px')
-            h2(style='text-align:center;') Easy 
-            p(style='text-align:center;padding: 0 10%;') A marketplace that makes it really easy to find ethical solutions to everyday needs.
+            img.framed-img.centered-img(src=data['easy'].image.url width='150px' height='150px')
+            h2.text-center Easy 
+            .summary-item
+              != data['easy'].content.html
           .col-sm-4.col-xs-12
-            img.framed-img.centered-img(src='images/together.svg' width='150px' height='150px')
-            h2(style='text-align:center;') Cooperative
-            p(style='text-align:center;padding: 0 10%;') A marketplace that is cooperatively owned and run by its users: buyers, sellers, workers, investors.
+            img.framed-img.centered-img(src=data['cooperative'].image.url width='150px' height='150px')
+            h2.text-center Cooperative
+            .summary-item
+              != data['cooperative'].content.html 
             
     hr
 
@@ -74,27 +77,15 @@ block content
       .col-xs-12
         h1 What's the offer?
       .col-sm-6
-        img.centered-img(src='images/sellers.svg' height='300px')
+        img.centered-img(src=data['seller_offer'].image.url height='300px')
         h2 For Sellers:
-        ul
-          li Upload, manage and display inventory (single or bulk upload, add/remove, sync, edit and reprice)
-          li Carry out transactions with other parties  (receive payment and ship)
-          li Resolve disputes (refunds and returns)
-          li Self-declare ethical value proposition, 
-          li Display accreditation schemes for the company and product lines
-          li Reference third party assurance and evaluations (eg Ethical Consumer Reports)
-          li Receive dividend or share of surplus as coop members
+        .offer-list
+          != data['seller_offer'].content.html
       .col-sm-6
-        img.centered-img(src='images/consumer.svg' height='300px')
+        img.centered-img(src=data['consumer_offer'].image.url height='300px')
         h2 For Consumers:
-        ul 
-          li Use ethical terms/tags to search, display, select/filter items that meet requirements
-          li Complete transactions: purchases, rent/hires, shares, gifts/free
-          li Manage orders online
-          li Resolve disputes
-          li Contribute to community ethical assurance, scrutiny and feedback.
-          li Coop members receive dividend or share of surplus
-
+        .offer-list
+          != data['consumer_offer'].content.html 
     hr
     .row
       .col-xs-12.col-sm-6.col-sm-offset-3
