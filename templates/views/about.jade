@@ -11,9 +11,8 @@ block content
         img.centered-img(src="images/fairmondo-.svg" style="margin: 20px auto; max-height:300px")
 
     .row(style='padding-top: 50px; padding-bottom: 50px ;background-color: #6aa84f')
-      .col-xs-10.col-xs-offset-1(style='text-align:center; color: white')
-        div(style='font-size:1.5em')
-          != data['what_is_fairmondo'].content.html
+      .col-xs-12.col-sm-10.col-sm-offset-1(style='text-align:center; color: white')
+        != data['what_is_fairmondo'].content.html
 
     hr 
 
@@ -29,24 +28,28 @@ block content
     hr
 
     .row#easy
-      .col-sm-4.col-sm-push-8
-        img.about-img.centered-img(src=data['easy'].image.url)
-      .col-sm-8.col-sm-pull-4
-        h1 Easy
-        .text-center(style="padding: 0 10%")
-          != data['easy'].content.html
+      .col-xs-12.col-sm-10.col-sm-offset-1
+        .row
+          .col-sm-4.col-sm-push-8
+            img.about-img.centered-img(src=data['easy'].image.url)
+          .col-sm-8.col-sm-pull-4
+            h1 Easy
+            .text-center
+              != data['easy'].content.html
     hr
 
     .row#cooperative
-      .col-sm-4
-        img.about-img.centered-img(src=data['cooperative'].image.url)
-      .col-sm-8
-        h1 Cooperative 
-        .text-center(style="padding: 0 10%")
-          != data['cooperative'].content.html
+      .col-xs-12.col-sm-10.col-sm-offset-1
+        .row
+          .col-sm-4
+            img.about-img.centered-img(src=data['cooperative'].image.url)
+          .col-sm-8
+            h1 Cooperative 
+            .text-center
+              != data['cooperative'].content.html
     hr
 
-    .row
+    .row#roadmap
       .col-xs-12
         h1.text-center Roadmap
         img.centered-img(src!= data['roadmap'].image.url style="max-width:100%")
