@@ -1,0 +1,14 @@
+extends ../layouts/default
+
+block intro
+  h1.text-center Vacancies
+
+block content
+  .container
+    .row
+      each vac in locals.data
+        .col-xs-12
+          h2.vacancy= vac.title
+          .text-center
+            != vac.description.html
+

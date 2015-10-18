@@ -39,7 +39,7 @@ block content
             
     hr
 
-    .row
+    .row#sign-up
       .col-xs-10.col-xs-offset-1
         form.form-horizontal(action="/subscribe" method="post")
           h1 - Be The Good -
@@ -53,25 +53,26 @@ block content
             .form-group
               input.form-control(type="email" placeholder="Email" value="" name="EMAIL" id="mce-EMAIL")
 
+            // Get interest IDs from mailchimp playground
             .form-group
               .col-xs-6.col-sm-3
-                label.checkbox-inline(for="mce-group[17881]-17881-0")
-                  input(type="checkbox" value="1" name="interests[84eb0fb602]" id="mce-group[17881]-17881-0")
+                label.checkbox-inline(for="buyer-group")
+                  input(type="checkbox" value="1" name="interests[84eb0fb602]" id="buyer-group")
                   | Buyer
               .col-xs-6.col-sm-3
-                label.checkbox-inline(for="mce-group[17881]-17881-1")
-                  input(type="checkbox" value="1" name="interests[11c76ad6f6]" id="mce-group[17881]-17881-1")
+                label.checkbox-inline(for="seller-group")
+                  input(type="checkbox" value="1" name="interests[11c76ad6f6]" id="seller-group")
                   | Seller
 
               .col-xs-6.col-sm-3
-                label.checkbox-inline(for="mce-group[17881]-17881-2")
-                  input(type="checkbox" value="1" name="interests[59b807ebca]" id="mce-group[17881]-17881-2")
-                  | Partner
+                label.checkbox-inline(for="worker-group")
+                  input(type="checkbox" value="1" name="interests[e16cf58fc6]" id="worker-group")
+                  | Worker
               
               .col-xs-6.col-sm-3
-                label.checkbox-inline(for="mce-group[17881]-17881-3")
-                  input(type="checkbox"  value="1" name="interests[b118819943]" id="mce-group[17881]-17881-3")
-                  | Supporter
+                label.checkbox-inline(for="investor-group")
+                  input(type="checkbox" value="1" name="interests[e17a4aa98f]" id="investor-group")
+                  | Investor
             .form-group.clear.text-center
               button.btn.btn-default(type="submit") Subscribe
     hr
@@ -95,8 +96,10 @@ block content
         h1 Where do we go from here?
         p.text-center Find out about the plan for the future and how you can get involved by looking at our roadmap or checking out our vacancies list.
         .text-center
-          button.btn.btn-default() See The Roadmap
-          button.btn.btn-default() Check Our Vacancies
+          a(href='about#roadmap')
+            button.btn.btn-default() See The Roadmap
+          a(href='vacancies')
+            button.btn.btn-default() See Our Vacancies
 
     hr
 
