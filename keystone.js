@@ -9,6 +9,8 @@ var keystone = require('keystone');
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
+var port = process.env.NODE_ENV == "prod" ? 80 : 3000;
+
 keystone.init({
 
 	'name': 'Fairmondo',
@@ -20,7 +22,7 @@ keystone.init({
 	'views': 'templates/views',
 	'view engine': 'jade',
 
-	'port': 80,
+	'port': port,
 	
 	'emails': 'templates/emails',
 	
